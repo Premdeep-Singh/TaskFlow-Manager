@@ -26,7 +26,6 @@ Task tracker for teams: projects with nested subtasks, team roles, and AI assist
    npm install
    npm run dev                           # http://localhost:5173 (proxies /api to :8080)
    ```
-4. Sign up two accounts, create a team with the first, and add the second by email.
 
 Environment variables: `MYSQL_HOST`, `MYSQL_USER`, `MYSQL_PASSWORD`, `MONGO_URI`, `JWT_SECRET`, `GEMINI_API_KEY`, `GEMINI_MODEL` (default `gemini-2.5-flash`), `CORS_ORIGIN`.
 
@@ -61,7 +60,3 @@ GET  /api/projects/mine         POST /api/projects         GET  /api/projects/{i
 GET  /api/tasks/mine            POST /api/tasks            PATCH /api/tasks/{id}/status   DELETE /api/tasks/{id}
 POST /api/ai/subtasks           GET  /api/ai/projects/{id}/summary
 ```
-
-## Before production
-
-Set a strong `JWT_SECRET`, serve over HTTPS, set `CORS_ORIGIN` to your real domain, and change the default database passwords. Names and emails in a team document don't update if a user later changes their profile (there is no profile editing yet).
