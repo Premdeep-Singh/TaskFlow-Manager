@@ -1,0 +1,16 @@
+# Starts both databases for local development:  docker compose up -d
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: taskhub_auth
+    ports: ["3306:3306"]
+    volumes: [mysql_data:/var/lib/mysql]
+  mongo:
+    image: mongo:7
+    ports: ["27017:27017"]
+    volumes: [mongo_data:/data/db]
+volumes:
+  mysql_data:
+  mongo_data:
